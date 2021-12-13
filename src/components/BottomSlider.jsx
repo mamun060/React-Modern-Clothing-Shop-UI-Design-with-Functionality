@@ -1,50 +1,51 @@
+import { React, useState } from 'react';
+import styled from 'styled-components';
 import { ArrowLeftOutlined, ArrowRightOutlined } from "@material-ui/icons";
-import { React, useState } from "react";
-import styled from "styled-components";
+import {mobile} from '../responsive';
 import { sliderItems } from "../data";
-import { mobile } from "../responsive";
 
+const BottomSlider = ()=>{
+    const [slideIndex, setSlideIndex] = useState(0);
 
-const Slider = () => {
-  const [slideIndex, setSlideIndex] = useState(0);
-
-  const handleClick = (direction) => {
-    if (direction === "left") {
-      setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2);
-    } else {
-      setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
+    const handleClick=(direction)=>{
+        if(direction === "left"){
+            setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2);
+        }else {
+            setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
+        }
     }
-  };
 
+    return(
+        <Container>
+            <Arrow direction="left" onClick={()=> handleClick("left")}>
+                <ArrowLeftOutlined />
+            </Arrow>
 
-  return (
-    <Container>
-      <Arrow direction="left" onClick={() => handleClick("left")}>
-        <ArrowLeftOutlined />
-      </Arrow>
-      <Wrapper slideIndex={slideIndex}>
-        {sliderItems.map((item) => (
-          <Slide bg={item.bg} key={item.id}>
-            <ImgContainer>
-              <Image src={item.img} />
-            </ImgContainer>
-            <InfoContainer>
-              <Title>{item.title}</Title>
-              <Desc>{item.desc}</Desc>
-              <Button>SHOW NOW</Button>
-            </InfoContainer>
-          </Slide>
-        ))}
-      </Wrapper>
-      <Arrow direction="right" onClick={() => handleClick("right")}>
-        <ArrowRightOutlined />
-      </Arrow>
-    </Container>
-  );
-};
+            <Wrapper slideIndex={slideIndex}>
+                {sliderItems.map((item) => (
+                    <Slide bg={item.bg} key={item.id}>
+                        <ImgContainer>
+                        <Image src={item.img} />
+                        </ImgContainer>
+                        <InfoContainer>
+                            <Title>{item.title}</Title>
+                            <Desc>{item.desc}</Desc>
+                            <Button>Buy Now</Button>
+                        </InfoContainer>
+                    </Slide>
+                ))}
+            </Wrapper>
 
-export default Slider;
+            <Arrow direction="right" onClick={()=> handleClick("right")}>
+                <ArrowRightOutlined />
+            </Arrow>
+        </Container>
+    );
+}
 
+export default BottomSlider;
+
+// write styled component styling
 const Container = styled.div`
   width: 100%;
   height: 100vh;
