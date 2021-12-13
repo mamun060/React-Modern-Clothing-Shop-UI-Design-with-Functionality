@@ -1,20 +1,16 @@
-import React, { Component, Fragment } from 'react'
-import Navbar from '../components/Navbar';
-import Announcment from '../components/Announcment';
+import React from "react";
+import Announcement from "../components/Announcement";
+import Navbar from "../components/Navbar";
+import Slider from "../components/Slider";
 
-class HomePage extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {  }
-    }
-    render() { 
-        return ( 
-            <Fragment>
-                <Announcment />
-                <Navbar />
-            </Fragment>
-         );
-    }
-}
- 
+const HomePage = () => {
+  return (
+    <div>
+      <Announcement />
+      <Navbar />
+      <Slider />
+    </div>
+  );
+};
+
 export default HomePage;
