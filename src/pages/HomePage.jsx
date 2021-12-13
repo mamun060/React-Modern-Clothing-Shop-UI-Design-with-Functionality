@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import Navbar from '../components/Navbar';
+import Announcment from '../components/Announcment';
 
 class HomePage extends Component {
     constructor(props) {
@@ -9,6 +10,7 @@ class HomePage extends Component {
     render() { 
         return ( 
             <Fragment>
+                <Announcment />
                 <Navbar />
             </Fragment>
          );
