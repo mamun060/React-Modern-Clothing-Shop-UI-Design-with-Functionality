@@ -70,6 +70,9 @@ const SearchContainer = styled.div`
 
 const Input = styled.input`
   border: none;
+  &:focus {
+    outline: none;
+   }
   ${mobile({ width: "50px" })}
 `;
 
