@@ -3,7 +3,7 @@ import { Search, ShoppingCartOutlined } from "@material-ui/icons";
 import React from "react";
 import styled from "styled-components";
 import { mobile } from "../responsive";
-
+import {Link} from 'react-router-dom';
 
 const Navbar = () => {
   return (
@@ -17,14 +17,14 @@ const Navbar = () => {
           </SearchContainer>
         </Left>
         <Center>
-          <Logo>Mamun</Logo>
+          <Logo><Link to="/">Mamun</Link></Logo>
         </Center>
         <Right>
-          <MenuItem>REGISTER</MenuItem>
-          <MenuItem>SIGN IN</MenuItem>
+          <MenuItem><Link to="signup">REGISTER</Link></MenuItem>  
+          <MenuItem><Link to="/signin">SIGN IN</Link></MenuItem> 
           <MenuItem>
             <Badge badgeContent={4} color="primary">
-              <ShoppingCartOutlined />
+              <Link to="/cart"><ShoppingCartOutlined /></Link>
             </Badge>
           </MenuItem>
         </Right>
@@ -90,6 +90,7 @@ const Right = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  text-decoration: none;
   ${mobile({ flex: 2, justifyContent: "center" })}
 `;
 
