@@ -7,13 +7,13 @@ const  Product=({item})=> {
     return (
             <Container>
             <Circle />
-            <Image src = {item.img} />
+                <Image src = {item.img} />
             <Info>
             <Icon>
                 <ShoppingCartOutlined />
             </Icon>
             <Icon>
-                <Link to="/productdetails"><SearchOutlined /></Link>
+                <Link to={`/productdetails/${item.id}`}><SearchOutlined/></Link>
             </Icon>
             <Icon>
                 <FavoriteBorderOutlined />

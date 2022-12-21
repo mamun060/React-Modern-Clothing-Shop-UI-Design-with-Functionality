@@ -23,7 +23,7 @@ const Navbar = () => {
           <MenuItem><Link to="signup">REGISTER</Link></MenuItem>  
           <MenuItem><Link to="/signin">SIGN IN</Link></MenuItem> 
           <MenuItem>
-            <Badge badgeContent={4} color="primary">
+            <Badge badgeContent={1} color="primary">
               <Link to="/cart"><ShoppingCartOutlined /></Link>
             </Badge>
           </MenuItem>
