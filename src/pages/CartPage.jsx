@@ -6,19 +6,12 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { mobile } from "../responsive";
 import { decrement, increment, clear } from "../features/cart/cartSlice";
-import { useEffect } from "react";
+
 
 const CartPage = () => {
   const dispatch = useDispatch()
   const cart = useSelector((state)=> state.cart);
 
-  useEffect(()=>{
-    totalPrice()
-  },[])
-
-  const totalPrice = () => {
-    
-  }
 
   return (
     <Container>
